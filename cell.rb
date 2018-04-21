@@ -1,9 +1,14 @@
 class Cell
-  attr_accessor :alive, :column_x, :row_y
+  attr_accessor :alive, :current_column, :left_column, :right_column,
+                :current_row, :row_above, :row_below
 
-  def initialize(column_x=0, row_y=0)
-    @column_x = column_x
-    @row_y = row_y
+  def initialize(current_column=0, current_row=0)
+    @current_column = current_column
+    @left_column = (@current_column - 1)
+    @right_column = (@current_column + 1)
+    @current_row = current_row
+    @row_above = (@current_row - 1)
+    @row_below = (@current_row + 1)
     @alive = false
   end
 
