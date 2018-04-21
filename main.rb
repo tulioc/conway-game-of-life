@@ -38,8 +38,8 @@ class GameOfLifeWindow < Gosu::Window
     draw_background
 
     @game.world.cells.each do |cell|
-      x_start = cell.column_x * @col_width
-      y_start = cell.row_y * @row_height
+      x_start = cell.current_column * @col_width
+      y_start = cell.current_row * @row_height
       if cell.alive?
         draw_alive_cell(x_start, y_start)
       else
